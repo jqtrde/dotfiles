@@ -1,0 +1,71 @@
+[user]
+	email = git@jqtrde.com
+	name = jqtrde
+
+[alias]
+	amend = commit --amend --reuse-message=HEAD
+	branches = branch -a
+	del = branch -D
+	contributors = shortlog --summary --numbered
+	cp = commit -p
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+	l = log --oneline
+	praise = blame -w -M
+	remotes = remote -v
+	s = status -s
+	sw = switch -c
+	tags = tag -l
+
+[core]
+	# Global, appended to project-level .gitattributes
+	attributesfile = ~/.gitattributes
+	editor = nvim
+	# Global, appended to project-level .gitignore
+	excludesfile = ~/.gitignore
+	# https://github.com/dandavison/delta
+	pager = delta
+[color]
+	ui = true
+
+
+[delta]
+	navigate = true
+	light = true
+	line-numbers = true
+[interactive]
+	diffFilter = delta --color-only
+
+
+[init]
+	defaultBranch = main
+
+[push]
+	followtags = true
+	# Assume --set-upstream on default push when no upstream tracking
+	autoSetupRemote = true
+[pull]
+	rebase = false
+[status]
+	# --short by default
+	short = true
+	# --branch by default
+	branch = true
+
+[merge]
+	log = true
+	tool = nvimmerge
+[mergetool "nvimmerge"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	trustexitcode = true
+[diff]
+	algorithm = patience
+	colorMoved = default
+	tool = nvimdiff
+	renames = copies
+	submodule = log
+[difftool "nvimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE
+	trustexitcode = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
