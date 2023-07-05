@@ -1,0 +1,36 @@
+[env_var]
+variable = "HIDDEN"
+symbol = "❗"
+format = "$symbol "
+
+# [directory]
+# style = "white"
+# format = "[$path]($style)[$read_only]($read_only_style) |"
+# truncate_to_repo = true
+# truncation_symbol = "…/"
+#
+# [git_branch]
+# style = "blue"
+# symbol = ""
+# format = "[$symbol $branch]($style) ⏽"
+#
+# [python]
+# style = "green"
+# format = ' [($virtualenv)]($style) ⏽'
+#
+# [cmd_duration]
+# style = "bold #174FCA"
+#
+# [line_break]
+# disabled = true
+#
+# [time]
+# style = "magenta normal"
+# time_format = "%R"
+# format = " $time($style) "
+# disabled = false
+#
+# [character]
+# success_symbol = "[⭢ ](bold yellow)"
+# error_symbol = "[⭢ ](bold red)"
+#
